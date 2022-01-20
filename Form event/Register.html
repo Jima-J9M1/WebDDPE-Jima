@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIgnin</title>
+    <style>
+        body{
+            margin-left: 20%;
+        }
+        .head{
+            display: flex;
+        }
+        h1{
+            width: 300%;
+        }
+        
+        .head ul{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            list-style-type: none;
+        }
+        .head li {
+        margin: 10px;
+        }
+    </style>
+    <script>
+        function onbl(e){
+            e.style.background="#ffffff";
+        }
+        function onfocuss(e)
+        {
+            e.style.background="lightgrey";
+        }
+        document.addEventListener("DOMContentLoaded",()=>{
+        var form = document.getElementById('form');
+            form.addEventListener('submit',function(event){
+            event.preventDefault();
+            var FirstName =document.getElementById('firstname').value;
+            window.alert(FirstName);
+            var tell = document.getElementById('tele').value;
+            alert(tell);
+            var age=document.getElementById("age").value;
+            alert(age);
+            var passwd=document.getElementById("pass").value;
+            alert(passwd);
+            var text=document.getElementById("com").value;
+            alert(text);
+        })
+    })
+    </script>
+</head>
+<body>
+    <div class="head">
+        <h1>Logo</h1>
+        <ul>
+            <li>Home</li>
+            <li>Register</li>
+            <li>Contact us</li>
+        </ul>
+    </div>
+    <hr size 3px black>
+    <div id="nform">
+        <form id="form">
+            <h2>Register</h2>
+            <label for="Firstname">First Name</label><br>
+            <input type="text" name="Firstname" id="firstname" onfocus="onfocuss(this)" onblur="onbl(this)" required><br><br>
+            <label for="phone">Phone</label><br>
+            <input type="number" name="phone" id="tele" onfocus="onfocuss(this)"  onblur="onbl(this)" required pattern=""><br><br>
+            <label for="age" >Age</label><br>
+            <input type="text" id="age" onfocus="onfocuss(this)" onblur="onbl(this)"><br>
+            <label for="color">Your favorite color</label><br>
+            <input type="color" name="color" id="col" value="#C0C0C0"><br>
+            <label for="birhtday">Birhtday</label><br>
+            <input type="date"><br>
+            <label for="Gender">Gender</label><br>
+            <label for="sex">male</label>
+            <input type="radio" name="sex" id="M">
+            <label for="sex">Fmale</label>
+            <input type="radio" name="sex" id="F"><br><br>
+            <label for="mpasswd">password</label><br>
+            <input type="password" name="passwd" id="pass"  required><br>
+            <label for="confirm">Confirm password</label><br><br>
+            <label for="skill">Skill</label><br><br>
+            <ul>
+                <li><input type="checkbox" name="HTML" id="H">HTML</li>
+                <li><input type="checkbox" name="C" id="C">CSS</li>
+                <li><input type="checkbox" name="J" id="J">Js</li>
+                <li><input type="checkbox" name="P" id="P">PHP</li><br>
+            </ul>
+            <label for="photo">Photo</label><br>
+            <input type="file" name="photo" id="pho"><br>
+            <label for="comment" >comment</label><br>
+            <textarea name="comment" id="com" cols="20" rows="10" onfocus="onfocuss(this)" onblur="onbl(this)"></textarea><br><br>
+            <input type="submit"  name="Submit" id="submit" value="submit">
+        </form>
+    </div>

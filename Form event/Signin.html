@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIgnin</title>
+    <style>
+        *{
+            font-family: 'Times New Roman', Times, serif;
+            box-sizing: border-box;
+        }
+        .head{
+            display: flex;
+        }
+        img{
+            margin-right:200px;
+
+        }
+        
+        .head ul{
+            display: flex;
+            color: rgb(255, 99, 8);
+            width: 300;
+            align-items: center;
+            list-style-type: none;
+        }
+        input[type="email"],input[type="password"]{
+        width: 300;
+        height: 40px;
+        border-radius: 5px;
+        font-size: 1.3em;
+        }
+        nav{
+            float: right;
+            margin-left: 50%;
+        }
+        input[type="submit"]{
+            width: 200px;
+            background-color: rgb(238, 255, 0);
+            color: black;
+            height: 40px;
+            border-radius: 5px;
+            font-size: 1.3em;
+        }
+        .head li {
+        margin: 10px;
+        }
+        video{
+            box-shadow: 2px 3px 30px dodgerblue;
+        }
+    </style>
+    <script>
+        function onFo(e){
+            e.style.background="#C0C0C0";
+        }
+        function onbl(e){
+            e.style.background="#ffffff";
+        }
+        document.addEventListener("DOMContentLoaded",()=>{
+        var form=document.getElementById("my_form");
+        form.addEventListener('submit',function(e){
+        e.preventDefault();
+        var username=document.getElementById("email").value;
+        var password=document.getElementById("pas").value;
+        alert(username);
+        alert(password);
+    })
+        })
+    </script>
+</head>
+<body>
+    <div class="head">
+        <img src="msg849088739-55300.jpg" alt="logo" width="100" height="100">
+        <nav>
+        <ul>
+            <li>Home</li>
+            <li>Register</li>
+            <li>Contact us</li>
+        </ul>
+    </nav>
+    </div>
+    <hr size 3px black>
+    <div class="singin">
+        <h2>
+            Signin
+        </h2>
+        <p>Signin and get full acess to our resource</p>
+            <form  id="my_form" method="get">
+            <label for="Username">Username</label>
+            <input type="email" name="Username" id="email" onfocus="onFo(this)"  onblur="onbl(this)" placeholder="Email"  required><br><br>
+            <label for="passwd">Password</label>
+            <input type="password" name="passwd" id="pas" onfocus="onFo(this)" onblur="onbl(this)" placeholder="password" min=8 required><br><br>
+            <input type="submit" name="submit" id="signin" placeholder="Signin">
+        </form> 
+    </div>
+    <br><br>
+    <div>
+        <video  id="video" src="24_HOURS.mp4" onpause="alert('Video was paused')" width=250px height=200px controls onplay="alert('Video is playing')" autoplay></video>
+    </div>
+</body>
+</html>
