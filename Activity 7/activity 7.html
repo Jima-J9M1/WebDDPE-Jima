@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(63, 212, 212);
+        }
+
+        .myform {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            width: 20%;
+            height: 60%;
+            font-size: 1.3em;
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+            border: 1px solid black;
+            box-shadow: 0px 0px 3px 4px rgb(23, 175, 112);
+        }
+
+        .form {
+            position: absolute;
+            left: 80%;
+            display: none;
+        }
+
+        .myform input[type="color"] {
+            width: 15%;
+            height: 60px;
+        }
+
+        .myform * {
+            margin: 10px 0px;
+        }
+
+        .myform input {
+            width: 60%;
+            padding: 5px;
+        }
+
+        #submit {
+            font-size: 1.2em;
+            margin: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="myform">
+        <form action="#myform" id="myform">
+            <label for="name">
+                Name:
+            </label>
+            <input type="text" name="name" id="name"><br>
+            <label for="age">email:</label>
+            <input type="email" id="email"><br>
+            <label for="age">Phone number:</label>
+            <input type="tel" id="tele"><br>
+            <label for="color">Favorite</label>
+            <input type="color" id="col" value="#124343"><br>
+            <label for="psswd">Password</label>
+            <input type="password" id="psswd">
+            <button id="submit">Add</button>
+        </form>
+    </div>
+    <div class="myform form"></div>
+    <script>
+        const fullName = document.getElementById("name");
+        const email = document.getElementById("email");
+        const tel = document.getElementById("tele");
+        const color = document.getElementById("col");
+        const pass = document.getElementById("psswd");
+        const add = document.getElementById("submit");
+        const ret = document.getElementById("retrive");
+
+        var person = {};
+
+        add.addEventListener("click", () => {
+            person.firstName = fullName.value;
+            person.Email = email.value;
+            person.Phone = tel.value;
+            person.color = "AirPlane";
+            person.pas = pass.value;
+            console.log(person.firstName);
+            const newEl = document.querySelector(".form");
+            newEl.innerHTML = "<p>" + person.firstName + "<br>" + person.Email + "<br>" + person.Phone +
+                "<br>" + person.color + "<br>" + person.pas + "<br></p>";
+            newEl.style.display="flex";
+
+
+        });
+    </script>
+</body>
+
+</html>
